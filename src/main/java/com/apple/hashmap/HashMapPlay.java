@@ -1,3 +1,5 @@
+package com.apple.hashmap;
+
 import com.apple.common.Person;
 import org.junit.jupiter.api.Test;
 
