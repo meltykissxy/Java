@@ -12,6 +12,10 @@ Entry<?,?>[] EMPTY_TABLE = {}; 长度为0的空数组
 Entry<K,V>[] table = (Entry<K,V>[]) EMPTY_TABLE;; 这是一个数组，用来存储(key,value)，这个Entry是HashMap一个内部类，它实现了Map接口的内部接口Entry类型。
 int size; 存储到HashMap中(key,value)键值对的数量
 
+0。75怎么来的？直接跳转HashMap源码，最上面就有哦：
+An instance of HashMap has two parameters that affect its performance: initial capacity and load factor. The capacity is the number of buckets in the hash table, and the initial capacity is simply the capacity at the time the hash table is created. The load factor is a measure of how full the hash table is allowed to get before its capacity is automatically increased. When the number of entries in the hash table exceeds the product of the load factor and the current capacity, the hash table is rehashed (that is, internal data structures are rebuilt) so that the hash table has approximately twice the number of buckets.
+As a general rule, the default load factor (.75) offers a good tradeoff between time and space costs. Higher values decrease the space overhead but increase the lookup cost (reflected in most of the operations of the HashMap class, including get and put). The expected number of entries in the map and its load factor should be taken into account when setting its initial capacity, so as to minimize the number of rehash operations. If the initial capacity is greater than the maximum number of entries divided by the load factor, no rehash operations will ever occur.
+
 
 （1）HashMap底层是数组+链表
 数组必须创建，并且指定长度，才能装对象。
@@ -192,11 +196,11 @@ public class TestHashMap7 {
         HashMap<String,String> map = new HashMap<>();
 
 //        for(int i=1; i<=20; i++) {
-//            map.put("王阳"+i, "翠花");
+//            map.put("Apple"+i, "翠花");
 //        }
 
-        map.get("王阳");
+        map.get("Apple");
 
-        map.remove("王阳");
+        map.remove("Apple");
     }
 }
